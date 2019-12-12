@@ -42,7 +42,13 @@ module.exports = function (ctx) {
       //            (not treeshaking Quasar; biggest bundle size; convenient)
       all: 'auto',
 
-      components: [],
+      components: [
+          'QHeader',
+          'QFooter',
+          'QTabs',
+          'QTab',
+          'QRouteTab'
+      ],
       directives: [],
 
       // Quasar plugins
@@ -139,7 +145,6 @@ module.exports = function (ctx) {
       // id: 'org.cordova.quasar.app',
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
-
 
     // https://quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
     capacitor: {
