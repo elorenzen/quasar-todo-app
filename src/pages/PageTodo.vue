@@ -1,7 +1,13 @@
 <template>
     <q-page class="q-pa-md">
         <q-list separator bordered>
-            <q-item :class="!task.completed ? 'bg-orange-3' : 'bg-green-3'" tag="label" v-ripple v-for="task in tasks" v-bind:key="task.id">
+            <q-item
+                :class="!task.completed ? 'bg-orange-3' : 'bg-green-3'"
+                tag="label"
+                v-ripple
+                v-for="(task, key) in tasks"
+                v-bind:key="key"
+            >
                 <q-item-section side top>
                     <q-checkbox v-model="task.completed" />
                 </q-item-section>
