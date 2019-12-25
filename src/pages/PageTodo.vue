@@ -43,33 +43,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  data () {
-    return {
-      tasks: [
-        {
-          id: 1,
-          name: 'KKX redeployment changes',
-          completed: false,
-          dueDate: '12/23/19',
-          dueTime: '17:00'
-        },
-        {
-          id: 2,
-          name: 'Follow-up call with DeepWork',
-          completed: false,
-          dueDate: '12/27/19',
-          dueTime: '9:00'
-        },
-        {
-          id: 3,
-          name: "Build 'Marquitta Mobile'",
-          completed: false,
-          dueDate: '2/28/20',
-          dueTime: '10:00'
-        }
-      ]
-    }
+  computed: {
+    ...mapGetters('tasks', ['tasks'])
   }
 }
 </script>
