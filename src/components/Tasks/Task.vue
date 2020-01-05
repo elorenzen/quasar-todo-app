@@ -69,7 +69,12 @@ export default {
       this.$q.dialog({
         title: 'Delete Task',
         message: 'Are you sure you want to delete this task?',
-        cancel: true,
+        ok: {
+          push: true
+        },
+        cancel: {
+          color: 'negative'
+        },
         persistent: true
       }).onOk(() => {
         this.deleteTask(id)
