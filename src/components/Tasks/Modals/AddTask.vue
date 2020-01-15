@@ -15,7 +15,7 @@
         </q-card-section>
 
         <q-card-section>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
+            <q-input outlined v-model="taskToSubmit.name" label="Enter your task" />
         </q-card-section>
 
         <q-card-actions align="right">
@@ -26,6 +26,15 @@
 
 <script>
 export default {
-
+  data () {
+    return {
+      taskToSubmit: {
+        name: '',
+        dueDate: '',
+        dueTime: '',
+        completed: false
+      }
+    }
+  }
 }
 </script>
