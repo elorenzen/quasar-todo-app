@@ -16,6 +16,19 @@
 
         <q-card-section>
             <q-input outlined v-model="taskToSubmit.name" label="Enter your task" />
+
+            <q-input
+                outlined
+                v-model="taskToSubmit.dueDate"
+            >
+                <template v-slot:append>
+                    <q-icon name="event" class="cursor-pointer">
+                        <q-popup-proxy>
+                            <q-date v-model="taskToSubmit.dueDate" />
+                        </q-popup-proxy>
+                    </q-icon>
+                </template>
+            </q-input>
         </q-card-section>
 
         <q-card-actions align="right">
