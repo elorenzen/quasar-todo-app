@@ -21,6 +21,7 @@
                     v-model="taskToSubmit.name"
                     label="Enter your task"
                     class="col"
+                    :rules="[val => !!val || 'Field is required']"
                 />
             </div>
 
