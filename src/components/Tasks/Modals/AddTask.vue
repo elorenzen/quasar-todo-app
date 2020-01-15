@@ -23,6 +23,7 @@
                         label="Enter your task"
                         class="col"
                         :rules="[val => !!val || 'Field is required']"
+                        ref="name"
                     />
                 </div>
 
@@ -59,12 +60,10 @@
                 </div>
             </q-card-section>
 
-            <q-card-actions align="right">
+            <q-card-actions align="center">
                 <q-btn
-                    flat
                     label="Save"
                     color="primary"
-                    v-close-popup
                     type="submit"
                 />
             </q-card-actions>
@@ -86,7 +85,13 @@ export default {
   },
   methods: {
     submitForm () {
-      console.log('Form submitted!')
+      this.$refs.name.validate()
+      if (!this.$refs.name.hasError) {
+        this.submitTask()
+      }
+    },
+    submitTask () {
+      console.log('task submitted!')
     }
   }
 }
